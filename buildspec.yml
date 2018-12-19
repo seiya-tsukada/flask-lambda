@@ -4,10 +4,14 @@ phases:
   pre_build:
     commands:
       - echo pip install
-      - pip install -r requirements.txt -t .
+      - which pip
+      - cat /etc/system-release
+      - yum -y install python-setuptools python-devel
+      - easy_install pip      
   build:
     commands:
       - echo Build started on `date`
+      - pip install -r requirements.txt -t .
       - echo zip -r artifact.zip ./*
   post_build:
     commands:
