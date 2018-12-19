@@ -3,12 +3,13 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - echo pip install  
+      - echo pip install
+      - python --version
   build:
     commands:
       - echo Build started on `date`
+      - apt install python-pip python-dev
       - pip install -r requirements.txt
-      - echo zip -r artifact.zip ./*
   post_build:
     commands:
       - echo Build completed on `date`
