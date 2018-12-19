@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - apt install python-pip python-dev
+      - apt-get install python-pip python-dev
       - pip install -r requirements.txt
   post_build:
     commands:
