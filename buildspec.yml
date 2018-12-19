@@ -3,13 +3,11 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - echo pip install
-      - yum -y install python-setuptools python-devel
-      - easy_install pip      
+      - echo pip install  
   build:
     commands:
       - echo Build started on `date`
-      - pip install -r requirements.txt -t .
+      - pip install -r requirements.txt
       - echo zip -r artifact.zip ./*
   post_build:
     commands:
