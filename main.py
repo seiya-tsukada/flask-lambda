@@ -1,16 +1,17 @@
-#! /bin/env python
 # coding: utf-8
 
-from flask import Flask
-from controller.main import main
+from jinja2 import Environment, FileSystemLoader
+import path
 
 def lambda_handler(event, context):
 
-    app = Flask(__name__)
-
-    # To controller
-    # main contents
-    app.register_blueprint(main)
-
-    if __name__ == "__main__":
-      app.run(debug=True)
+  env = Environment(loader=FileSystemLoader(path.join(path.dirname(__file__), 'templates'), encoding='utf8'))
+  
+  template = env.get_template('index.html')
+  html = template.render()
+  
+  return {
+      "statusCode": 200,
+      "headers": {"Content-Type": "text/html"},
+      "body": html
+  }
