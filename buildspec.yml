@@ -4,18 +4,15 @@ phases:
   pre_build:
     commands:
       - echo pip install
-      - python --version
+      - curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py"
+      - python /tmp/get-pip.py
   build:
     commands:
       - echo Build started on `date`
-      - curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py"
-      - python /tmp/get-pip.py
       - pip install -r requirements.txt -t .
-      - ls -la
   post_build:
     commands:
       - echo Build completed on `date`
-      - ls -la
 artifacts:
   type: zip
   files:
