@@ -4,11 +4,13 @@
 from flask import Flask
 from controller.main import main
 
-app = Flask(__name__)
+def lambda_handler(event, context):
 
-# To controller
-# main contents
-app.register_blueprint(main)
+    app = Flask(__name__)
 
-if __name__ == "__main__":
-  app.run(host="0.0.0.0", port="8080", debug=True)
+    # To controller
+    # main contents
+    app.register_blueprint(main)
+
+    if __name__ == "__main__":
+      app.run(debug=True)
