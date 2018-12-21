@@ -5,14 +5,11 @@ import os
 
 def lambda_handler(event, context):
 
-    print os.path.join(os.path.dirname(__file__), 'templates')
-
-    env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates'), encoding='utf8'))
-
-    template = env.get_template('index.html')
+    env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates"), encoding="utf8"))
+    template = env.get_template("index.html")
 
     var = "world"
-    
-    html = template.render(var=var)
+
+    html = template.render(var=var, event=event)
 
     return  html
