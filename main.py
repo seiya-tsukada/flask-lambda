@@ -10,10 +10,9 @@ def lambda_handler(event, context):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates'), encoding='utf8'))
 
     template = env.get_template('index.html')
-    html = template.render()
 
-    return {
-      "statusCode": 200,
-      "headers": {"Content-Type": "text/html"},
-      "body": html
-    }
+    var = "world"
+    
+    html = template.render(var=var)
+
+    return  html
