@@ -6,3 +6,13 @@
 CodePipeline
 CodeBuild -> Lambda -> Lambda
 ```
+
+### Mapping Template
+
+```
+text/html
+```
+
+```
+$input.path('$')
+```
