@@ -10,9 +10,20 @@
 
     </div>
 
-    </div>
+    <div>
 
-      {{ event|pprint }} !!
+{% for header in event.params.header %}
+
+  
+    {{ header|pprint }}<br />
+    {{ event.params.header|pprint }}<br />
+
+  
+
+  
+{% endfor %}
+
+      
 
     </div>
 
