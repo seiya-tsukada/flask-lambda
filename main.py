@@ -10,6 +10,6 @@ def lambda_handler(event, context):
 
     var = "world"
 
-    html = template.render(var=var)
+    html = template.render(var=var, event=event)
 
     return  html
