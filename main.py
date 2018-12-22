@@ -9,8 +9,8 @@ def lambda_handler(event, context):
     template = env.get_template("index.html")
 
     var = "world"
-    params = event["params"]
+    header = event["params"]["header"]
 
-    html = template.render(var=var, params=params)
+    html = template.render(var=var, header=header)
 
     return  html

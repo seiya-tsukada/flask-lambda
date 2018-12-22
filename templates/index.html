@@ -12,8 +12,12 @@
 
     <div>
 
-        {{ params|pprint }}
-        
+        {{ header|pprint }}
+
+     {% for k, v in header.items() %}
+        {{ k }}: {{ v }}<br />
+      {% endfor %}
+
     </div>
 
   </body>
