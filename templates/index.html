@@ -1,22 +1,19 @@
 <html>
   <head></head>
-  <title>hello world</title>
+  <title>hello</title>
   <body>
-
-    </div>
-
-      hello <br />
-      {{ var }} !!
-
-    </div>
 
     <div>
 
-     {% for k, v in header.items() %}
-        {{ k }}: {{ v }}<br />
-     {% endfor %}
+    <table border="1" width="100">
+      {% for k, v in header.items() %}
+        <tr>
+        <th>{{ k }}</th>
+        <th>{{ v }}</th>
+        </tr>
+      {% endfor %}
+    </table>
 
     </div>
-
   </body>
 </html>
